@@ -1,0 +1,137 @@
+/* class . id #*/
+BODY {
+    MARGIN: 5px;
+    FONT-FAMILY: Arial;/* 中文字体?*/
+    font-size: 20px;
+    line-height: 150%;
+    BACKGROUND: #CCE8CF;
+    background-color: hsl(126,38%,85%);
+    BACKGROUND: #c1ddc6;
+    background-color: hsl(131,29%,81%);
+    background-color: hsl(130,35%,85%); 
+}
+H3 {
+    margin: 5px auto 0px auto;
+    padding: 0px 5px 0px 5px;
+    COLOR: #00439a;
+    color: hsl(215,95%,30%);
+}
+div {
+    margin: 0px auto;
+    padding: 0px 5px;
+}
+FORM {
+    margin: 5px;
+    padding: 5px;
+}
+INPUT {
+    margin: 0px auto;
+    padding: 0px 5px;
+    font-size:20px;
+}
+INPUT[type="submit"] {
+    WIDTH: 6em;
+    HEIGHT: 100%;/*FONT-SIZE: 14px;
+                  */
+}
+UL {
+    margin: 0px auto;
+    padding: 0px 5px;
+    list-style-type: none;
+}
+span {
+    display: inline-block;
+    WIDTH: 150px;
+    TEXT-ALIGN: center;
+    color: hsl(350,95%,30%);
+    color: hsl(0,95%,30%);
+}
+A:link , A:visited {
+    color: hsl(215,95%,30%);
+    text-decoration: none;
+}
+A:hover {
+    COLOR: #b33035;
+    TEXT-DECORATION: underline;
+}
+A:active {
+    COLOR: #fff;
+}
+/* class  class  class  class  class  class */
+/* class  class  class  class  class  class */
+.bordercolor_Y {
+    border-style: solid;
+    border-width: 1px;
+    border-color: red;
+    border-color: hsl(40,100%,75%);
+}   
+.bordercolor_B {
+    border-style: solid;
+    border-width: 1px;
+    border-color: hsl(220,100%,75%);
+}
+.bordercolor_R {
+    border-style: solid;
+    border-width: 1px;
+    border-color: hsl(310,100%,75%);
+}
+
+.BGcolor {
+    BACKGROUND-COLOR: #f0f5fb;
+    BACKGROUND-color: hsl(210,60%,95%);
+}
+.clear {
+    clear: both;
+}
+/* id ------------------header-------------------*/
+/* id ------------------header-------------------*/
+#header {
+    WIDTH: 900px;
+    height: 100px;
+}
+#header img {
+    float: left;
+}
+#headerRight {
+    MARGIN: 16px auto 0px 200px;
+    WIDTH: 650px;
+}
+#headerRight A {
+    MARGIN-left: 25px;
+}
+/* id ------------------container-------------------*/
+/* id ------------------container-------------------*/
+#container {
+    margin-top: 5px;
+    WIDTH: 900px;
+}
+/* id ------------------leftSide-------------------*/
+/* id ------------------leftSide-------------------*/
+#leftSide {
+    margin-top: 5px;
+    width: 158px;
+    FLOAT: left;
+}
+#leftSide LI {
+    text-align: center;
+}
+/* id ------------------rightSide-------------------*/
+/* id ------------------rightSide-------------------*/
+#rightSide {
+    margin-top: 5px;
+    WIDTH: 700px;
+    FLOAT: right;
+}
+/*  ------------------mmswebsite-------------------*/
+#mmswebsite a {
+    display: inline-block;
+    width: 150px;
+    MARGIN-left: 20px;
+}
+/*  ------------------mywebsite-------------------*/
+#mywebsite li {
+    display: inline;
+}
+#mywebsite A {
+    MARGIN-right: 40px;
+}

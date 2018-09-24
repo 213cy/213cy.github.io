@@ -1,4 +1,4 @@
-/* class . id #*/
+﻿/* class . id #*/
 BODY {
     MARGIN: 5px;
     FONT-FAMILY: Arial;/* 中文字体?*/
@@ -94,7 +94,7 @@ A:active {
 }
 #headerRight {
     MARGIN: 16px auto 0px 200px;
-    WIDTH: 650px;
+    WIDTH: 670px;
 }
 #headerRight A {
     MARGIN-left: 25px;

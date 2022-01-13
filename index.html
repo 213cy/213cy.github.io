@@ -14,7 +14,7 @@
    <DIV id=headerRight class="bordercolor_Y"> 
       <A href="http://www.weather.com.cn/html/weather/101181601.shtml?">天气预报</A>
       <A href="https://www.thefreedictionary.com/words-containing-poly">Word Finder</A>
-      <A href="https://www.affixes.org/">便笺</A>
+      <A href="https://www.affixes.org/">affixes</A>
       <A href="https://translate.google.cn/">翻译</A>
       <A href="https://github.com/cyfile/computer/tree/master/bookmark">收藏</A>
       <A href="https://github.com/cyfile/computer/issues">|   电脑</A>
@@ -23,7 +23,7 @@
             <INPUT class=formInput id=kww
             onmouseover=this.focus(); onfocus=this.select(); size=20 name=word autocomplete="off">
 
-            <INPUT type=submit value=Dictionary onmousedown="document.getElementById('f1').action='https://www.thefreedictionary.com/';document.getElementById('kww').name='wd'" onkeydown="document.getElementById('f1').action='http://dict.baidu.com/s';document.getElementById('kww').name='wd'">
+            <INPUT type=submit value=Dictionary onkeydown="window.location.replace( 'https://www.thefreedictionary.com/'+ document.getElementById('kww').value )">
             <INPUT type=submit value=Bing onmousedown="document.getElementById('f1').action='http://global.bing.com/search';document.getElementById('kww').name='q'" >
 
             <INPUT type=submit value=百度一下>

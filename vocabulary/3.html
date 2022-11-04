@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>vocabulary</title>
+        <style>
+            pre {
+                float: left;
+                width: 18%;
+                background-color: AliceBlue;
+                margin: 10px;
+                padding: 10;
+                font-size: 150%
+            }
+
+            hr {
+                clear: left;
+            }
+        </style>
+        <script>
+            function addwords() {
+                url = 'https://213cy.github.io/dartboard%20ffa.txt'
+                url = 'words.txt'
+                fetch(url).then(data=>data.text()).then(text=>{
+                    wl = document.getElementById("wordslist");
+                    text.split('\n\n').forEach(item=>{
+                        var col = document.createElement('pre');
+                        var colText = document.createTextNode(item);
+                        col.appendChild(colText);
+                        wl.appendChild(col);
+                    }
+                    );
+
+                }
+                );
+            }
+        </script>
+    </head>
+    <body onload="addwords()">
+        <div id="wordslist">
+            <a href="https://github.com/213cy/213cy.github.io/edit/master/3.html">edit </a>
+            <br>
+            <p>------------------------------
+</p>
+            <br>
+            <pre>credit
+credible
+credence
+credential
+certain
+certify
+certificate
+</pre>
+            <pre>compensate
+compromise
+composite
+component
+comprise
+surprise
+compose
+propose
+suppose
+repository
+</pre>
+            <pre>author
+authority
+authorize
+authenticate
+authentication
+</pre>
+            <pre>strenuous
+nervous
+</pre>
+            <pre>flu
+fluid
+flute
+fluent
+fluctuate
+fuse
+flux
+flush
+</pre>
+            <hr style="clear:left;"/>
+            <pre>parade
+paranoid
+paradox
+paradise
+paragraph
+parameter
+parallel
+parasite
+</pre>
+            <pre>plane
+plate
+template
+panel
+pane
+plant
+plan
+plain
+explain
+</pre>
+            <pre>pound
+spend
+passion
+pension
+pensive
+expensive
+expend
+pendant
+pendulum
+suspend
+depend
+append
+appendix
+independent
+compenstate
+</pre>
+        </div>
+    </body>
+</html>

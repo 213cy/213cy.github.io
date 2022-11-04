@@ -19,11 +19,12 @@
         </style>
         <script>
             function addwords() {
-                url = 'https://213cy.github.io/dartboard%20ffa.txt'
+                url = 'https://213cy.github.io/vocabulary/words.txt'
                 url = 'words.txt'
                 fetch(url).then(data=>data.text()).then(text=>{
                     wl = document.getElementById("wordslist");
-                    text.split('\n\n').forEach(item=>{
+                    var cards = text.split('\n\n')
+                    cards.forEach(item=>{
                         var col = document.createElement('pre');
                         var colText = document.createTextNode(item);
                         col.appendChild(colText);

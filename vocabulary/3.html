@@ -23,8 +23,7 @@
                 url = 'words.txt'
                 fetch(url).then(data=>data.text()).then(text=>{
                     wl = document.getElementById("wordslist");
-                    var cards = text.split('\n\n')
-                    cards.forEach(item=>{
+                    text.split('\r\n\r\n').forEach(item=>{
                         var col = document.createElement('pre');
                         var colText = document.createTextNode(item);
                         col.appendChild(colText);

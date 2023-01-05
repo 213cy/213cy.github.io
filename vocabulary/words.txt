@@ -1,4 +1,4 @@
-infrastructure
+﻿infrastructure
 infrared
 infrasonic
 
@@ -64,7 +64,8 @@ audit
 audience
 autumn
 auxiliary
-
+area
+arena
 
 regeneration
 care
@@ -174,8 +175,16 @@ neural
 neutral
 neutron
 neuron
+nerd
 nerve
 nervous
+
+new
+nova
+novel
+note
+noble
+november nine
 
 
 reel
@@ -254,6 +263,18 @@ friction
 fibre
 fabric
 fabrication
+factory
+facility
+efficient
+coefficient
+effect
+infect
+fact
+
+fiction
+specific
+Pacific
+traffic
 
 hydraulic
 auxiliary
@@ -274,6 +295,9 @@ quality
 quantity
 unique
 quarter
+quadrant
+quadratic
+quarantine
 Squid
 Assault Squad
 quake
@@ -409,7 +433,7 @@ flare
 blame
 
 
-
+conceal
 demonstrate
 reveal
 unveil
@@ -419,3 +443,6 @@ expose
 exhibit
 habit (had it)
 prohibit
+
+
+

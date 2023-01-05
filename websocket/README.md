@@ -1,12 +1,12 @@
-PythonÊµÏÖ¼òµ¥µÄwebsocket_ÃÎÂäÓ°ÊÅµÄ²©¿Í
+Pythonå®ç°ç®€å•çš„websocket_æ¢¦è½å½±é€çš„åšå®¢   
 https://blog.csdn.net/weixin_42466638/article/details/125563545
 
 
-WebSocketĞ­Òé£º5·ÖÖÓ´ÓÈëÃÅµ½¾«Í¨ - ³ÌĞòÔ³Ğ¡¿¨
+WebSocketåè®®ï¼š5åˆ†é’Ÿä»å…¥é—¨åˆ°ç²¾é€š - ç¨‹åºçŒ¿å°å¡   
 https://www.cnblogs.com/chyingp/p/websocket-deep-in.html
 
 
-BÕ¾Ö±²¥µ¯Ä»ÀñÎï²É¼¯Æ÷
+Bç«™ç›´æ’­å¼¹å¹•ç¤¼ç‰©é‡‡é›†å™¨   
 https://www.bilibili.com/read/cv8979725
 http://www.xicao.xyz/bz/
 
@@ -14,10 +14,10 @@ http://www.xicao.xyz/bz/
 ---
 
 WebSocket Debug Tool
-jxy.me/websocket-debug-tool/
+http://jxy.me/websocket-debug-tool/
 
-ÔÚÏßwebsocket²âÊÔ
-coolaf.com/zh/tool/chattest
+åœ¨çº¿websocketæµ‹è¯•
+http://coolaf.com/zh/tool/chattest
 
 Convert curl commands to Python
 https://curlconverter.com/python/

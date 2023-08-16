@@ -1,4 +1,6 @@
-﻿lobe
+﻿
+
+lobe
 lube
 labe
 
@@ -356,8 +358,10 @@ flame
 flare
 blame
 =====================================
+shampoo
 champagne
 champion
+championship
 campaign
 chamber
 

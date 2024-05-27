@@ -77,6 +77,11 @@ daze
 dizzy
 fog
 forest
+force
+reinforce
+furnace
+fortitude
+fortress
 frost
 freeze
 mist
@@ -107,6 +112,14 @@ note
 noble
 november nine
 
+note
+knot
+nozzle
+nose
+snooze
+rhino
+nasal
+
 
 reel
 twine
@@ -125,6 +138,12 @@ twister
 twist
 twitch
 
+Thor
+thorax
+thoracic ceramic
+throne
+throat
+through
 
 hurricane
 volcano
@@ -141,6 +160,8 @@ nintendo
 tend
 tender
 tendon
+
+
 
 
 tail
@@ -165,11 +186,7 @@ portrait
 trait
 traitor
 
-stereo
-mono
-monopoly
-homosexual
-homogeneous
+
 
 crisis
 ellipse
@@ -283,24 +300,42 @@ corrupt
 deform
 malformed
 malware
+malicious
 mutation
 immunity
 ------------------------------------
+omnibox
+omnibus
+omnidirection
 
 common
 community
 communicate
+move
 mutual
 mutation
 moral
 mortal
+immortal
 mortar
 moron
 
+stereo
+mono
+monopoly
+homosexual
+homogeneous
+
 mandatory
-moderate
+mode
+moderate 有尺度(mode)的
+modest   不自满(外溢)的
+accommodate
 manual
 menu
+man main 维持
+maintain
+permanent
 
 military
 martial
@@ -313,11 +348,14 @@ amateur adept adopt
 expert  
 adapt
 
-muss
-mess
-mass
-math
 
+
+marble
+marvel
+miracle
+Marlboro
+
+maneuver
 ------------------------------------
 
 infrastructure
@@ -357,6 +395,11 @@ famous
 flame
 flare
 blame
+
+fatal
+fetal
+orphan
+often
 =====================================
 shampoo
 champagne

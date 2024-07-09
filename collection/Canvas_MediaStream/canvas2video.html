@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <style>
+            html, body {
+                width: 100%;
+                height: 100%;
+            }
+
+            .main {
+                display: flex;
+                border: solid #2377c0;
+            }
+
+            #videoContainer {
+                display: none;
+                background-color: antiquewhite;
+                border: solid;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <canvas width="450" height="450"></canvas>
+            <div id="videoContainer" style="display: block;">
+                <h2>video</h2>
+                <video width="300" height="300" controls="true" autoplay="true" id="video" src="blob:null/c7e11df7-f1d2-47a5-aee3-8b7124926cde"></video>
+            </div>
+        </div>
+        https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder<br>
+        https://github.com/mdn/dom-examples/tree/main/media/web-dictaphone<br>
+        <a href="javascript:void(0);">Click here to do nothing</a>
+        <a href="javascript:void(document.body.style.backgroundColor='green');">Click here for green background
+</a>
+        <script src="record.js"></script>
+    </body>
+</html>

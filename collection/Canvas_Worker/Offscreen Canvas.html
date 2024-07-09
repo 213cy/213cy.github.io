@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)https://devnook.github.io/OffscreenCanvasDemo/keep-ui-responsive.html -->
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Offscreen Canvas</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1>OffscreenCanvas</h1>
+            <div class="desc">
+                The OffscreenCanvas allows to create a canvas that can be rendered off screen. It
+      can lso be used in web workers.  
+      <br>
+                If an app has long running rendering tasks (e.g. ray tracing in WebGL), running those
+        tasks in a worker allows the web app’s UI to remain responsive while the rendering
+        task runs continuously in the background.
+            
+            <p>https://devnook.github.io/OffscreenCanvasDemo/keep-ui-responsive.html</p>
+            </div>
+        </header>
+        <main>
+            <section>
+                <p class="desc">The animation below is running a heavy task while changing the color theme.
+        If you click on the button at such moment, the interaction is blocked
+        for a short while causing bad user experience.
+      </p>
+                <p>
+                    <button id="interactive">
+                        Interact! Counter: <span id="log">0</span>
+                    </button>
+                    §
+        <input type="checkbox" id="play" class="cbx hidden">
+                    <label for="play" id="play-label" class="lbl">Runs on main thread</label>
+                </p>
+                <div class="display">
+                    <div>
+                        <h1>Canvas on main thread</h1>
+                        <p>Interaction is blocked when a theme is loading</p>
+                        <canvas id="canvas-window"></canvas>
+                    </div>
+                    <div>
+                        <h1>Canvas on worker thread</h1>
+                        <p>Interaction works even if a theme is loading</p>
+                        <canvas id="canvas-worker"></canvas>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <script src="animation.js"></script>
+        <script type="script/worker" id="workerCode">
+            
+    let animationWorker = null;
+    self.onmessage = function(e) {
+      switch (e.data.msg) {
+        case 'start':
+          if (!animationWorker) {
+            importScripts(e.data.origin + '/animation.js');
+            animationWorker = new ThemedAnimation(e.data.canvas.getContext('2d'));
+          }
+          animationWorker.start();
+          break;
+        case 'stop':
+          if (!animationWorker) {
+            return;
+          }
+          animationWorker.stop();
+          break;
+      }
+    };
+  
+
+        </script>
+        <script>
+            (()=>{
+                // Feature detect.
+                document.querySelector('main').classList.toggle('supported', ('OffscreenCanvas'in window));
+
+                document.body.classList.toggle('iframe', (window.location != window.parent.location));
+
+                const playWindowBtn = document.querySelector('#play-window');
+                const playWorkerBtn = document.querySelector('#play-worker');
+                const workerCode = document.querySelector('#workerCode').textContent;
+                const blob = new Blob([workerCode],{
+                    type: 'text/javascript'
+                });
+                const url = URL.createObjectURL(blob);
+                const worker = new Worker(url);
+
+                const animationWindow = new ThemedAnimation(document.querySelector('#canvas-window').getContext('2d'));
+                const offscreen = document.querySelector('#canvas-worker').transferControlToOffscreen();
+                let workerStarted = false;
+
+                document.querySelector('#interactive').addEventListener('click', ()=>{
+                    const logBox = document.querySelector('#log');
+                    const value = parseInt(logBox.innerText, 10) + 1;
+                    logBox.innerText = value;
+                }
+                );
+
+                const playBtn = document.querySelector('#play');
+                const playLabel = document.querySelector('#play-label');
+                playBtn.addEventListener('change', (e)=>{
+                    const inWorker = e.target.checked;
+                    playLabel.innerHTML = inWorker ? 'Runs in worker' : 'Runs on main thread';
+                    playAnimation(inWorker);
+                }
+                );
+
+                function playAnimation(inWorker) {
+                    if (inWorker) {
+                        animationWindow.stop();
+                        if (workerStarted) {
+                            worker.postMessage({
+                                msg: 'start'
+                            });
+                        } else {
+                            const urlParts = location.href.split('/');
+                            if (urlParts[urlParts.length - 1].indexOf('.') !== -1) {
+                                urlParts.pop();
+                            }
+                            worker.postMessage({
+                                msg: 'start',
+                                origin: urlParts.join('/'),
+                                canvas: offscreen
+                            }, [offscreen]);
+                            workerStarted = true;
+                        }
+                    } else {
+                        worker.postMessage({
+                            msg: 'stop'
+                        });
+                        animationWindow.start();
+                    }
+                }
+                animationWindow.start();
+            }
+            )()
+        </script>
+    </body>
+</html>

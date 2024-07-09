@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <style>
+            .loader {
+                width: 200px;
+                height: 200px;
+                aspect-ratio: 1;
+                position: relative;
+                color: #e91e63;
+                border-color: #03a9f4;
+                border-width: 5px;
+                border: double;
+            }
+
+            .loader:before, .loader:after {
+                content: "❶❷❸";
+                position: absolute;
+                border-radius: 20px;
+                border-style: solid;
+                box-shadow: 0 0 0 3px inset #0ff;
+                animation: animat 2.5s infinite;
+            }
+
+            .loader:after {
+                animation-delay: -1.25s;
+            }
+
+            @keyframes animat {
+                0% {
+                    inset: 0 35px 35px 0;
+                }
+
+                12.5% {
+                    inset: 0 35px 0 0;
+                }
+
+                25% {
+                    inset: 35px 35px 0 0;
+                }
+
+                37.5% {
+                    inset: 35px 0 0 0;
+                }
+
+                50% {
+                    inset: 35px 0 0 35px;
+                }
+
+                62.5% {
+                    inset: 0 0 0 35px;
+                }
+
+                75% {
+                    inset: 0 0 35px 35px;
+                }
+
+                87.5% {
+                    inset: 0 0 35px 0;
+                }
+
+                100% {
+                    inset: 0 35px 35px 0;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="loader"></div>
+        https://css-loaders.com/
+    </body>
+</html>

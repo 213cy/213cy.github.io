@@ -1,0 +1,134 @@
+<html>
+    <head>
+        <style>
+            embed {
+                width: 100%;
+                height: 1024px;
+                border: solid;
+            }
+        </style>
+    </head>
+    <body>
+        <pre>https://www.bilibili.com/read/cv14101053/
+https://daidr.me/archives/code-526.html
+https://github.com/yulinfeng000/blive/blob/main/PROTOCOL.md
+</pre>
+      <hr>
+        <pre>const CON = {
+    WS_OP_HEARTBEAT: 2,
+    WS_OP_HEARTBEAT_REPLY: 3,
+    WS_OP_MESSAGE: 5,
+    WS_OP_USER_AUTHENTICATION: 7,
+    WS_OP_CONNECT_SUCCESS: 8,
+    WS_PACKAGE_HEADER_TOTAL_LENGTH: 16,
+    WS_PACKAGE_OFFSET: 0,
+    WS_HEADER_OFFSET: 4,
+    WS_VERSION_OFFSET: 6,
+    WS_OPERATION_OFFSET: 8,
+    WS_SEQUENCE_OFFSET: 12,
+    WS_BODY_PROTOCOL_VERSION_NORMAL: 0,
+    WS_BODY_PROTOCOL_VERSION_DEFLATE: 2,
+    WS_BODY_PROTOCOL_VERSION_BROTLI: 3,
+    WS_HEADER_DEFAULT_VERSION: 1,
+    WS_HEADER_DEFAULT_OPERATION: 1,
+    WS_HEADER_DEFAULT_SEQUENCE: 1,
+    WS_AUTH_OK: 0,
+    WS_AUTH_TOKEN_ERROR: -101
+}; 
+        </pre>
+        <pre>[包格式]
+包头由5个字段构成的16字节,后面接包体数据
+offset                                  length  note
+0     WS_PACKAGE_OFFSET                 4       Packet Length       数据包长度(header 16 + body)
+4     WS_HEADER_OFFSET                  2       Header Length       数据包头部长度(固定为 16)
+6     WS_VERSION_OFFSET                 2       Protocol Version    协议版本(见下文)
+8     WS_OPERATION_OFFSET               4       Operation           操作类型(见下文)
+12    WS_SEQUENCE_OFFSET                4       Sequence Id         -
+16    WS_PACKAGE_HEADER_TOTAL_LENGTH    -       Body                数据内容
+
+[协议版本]
+                                          含义
+0     WS_BODY_PROTOCOL_VERSION_NORMAL     数据包数据为未压缩的JSON格式数据
+1                                         服务器心跳回应包(带有人气值?)
+2     WS_BODY_PROTOCOL_VERSION_DEFLATE    数据包数据为通过zlib压缩后的JSON格式数据
+3     WS_BODY_PROTOCOL_VERSION_BROTLI     数据包数据为通过Brotli压缩后的JSON格式数据
+
+
+[操作类型]
+                                  发送方  名称        含义
+2     WS_OP_HEARTBEAT             客户端  心跳        不发送心跳包,50-60秒后服务器会强制断开连接
+3     WS_OP_HEARTBEAT_REPLY       服务器  心跳回应    包含一个总是1的数据(带有人气值?)
+5     WS_OP_MESSAGE               服务器  消息包      礼物、弹幕、公告等内容数据
+7     WS_OP_USER_AUTHENTICATION   客户端  认证包      客户端成功建立连接后发送的第一个数据包(见下文)
+8     WS_OP_CONNECT_SUCCESS       服务器  认证成功    服务器接受认证包后回应的第一个数据包
+
+[SEQUENCE]
+SEQUENCE > 1 , 要求客户端向 "/xlive/open-interface/v1/dm/message_ack" 回发数据进行确认
+
+// ===================================================
+
+[认证包]
+建立连接后需要立即发送认证包
+Protocol_Version = WS_HEADER_DEFAULT_VERSION,
+Sequence_Id = WS_HEADER_DEFAULT_SEQUENCE
+{
+  "uid": 0,          // 用户UID,0 代表游客
+  "roomid": 123,     // room_id
+  "protover": 3,     // PROTOCOL_VERSION 要求服务器在粘包时优先选择的协议版本(压缩方式zlib/brotil)
+  "platform": "web",                 // 选择web端
+  "type": 2,                         // 不明确,填2
+  "buvid": "buvid3 in cookies",      // ( /buvid3=(.+?)(;|\s|$)/.exec(document.cookie) )[1]
+  "key": "token"                     // 填写获取的token值
+}
+uid,roomid,buvid,key这四个是须要配套使用的
+token 获取地址 
+`https://api.live.bilibili.com/xlive/web-room/v1/index/getDanmuInfo?id=${room_id}&type =0`
+`https://api.live.bilibili.com/room/v1/Danmu/getConf?room_id=${room_id}&platform =pc &player =web`
+
+00000000: 0000 0158 0010 0001 0000 0007 0000 0001  ...X............
+00000001: 7b22 7569 6422 3a30 2c22 726f 6f6d 6964  {"uid":0,"roomid
+00000002: 223a 3235 3938 3937 3432 2c22 7072 6f74  ":25989742,"prot
+00000003: 6f76 6572 223a 332c 2262 7576 6964 223a  over":3,"buvid":
+00000004: 2238 4543 4544 4337 432d 3943 3045 2d35  "8ECEDC7C-9C0E-5
+00000005: 3746 372d 3137 4330 2d36 3330 4430 3843  7F7-17C0-630D08C
+00000006: 3241 4644 3431 3330 3634 696e 666f 6322  2AFD413064infoc"
+00000007: 2c22 706c 6174 666f 726d 223a 2277 6562  ,"platform":"web
+00000008: 222c 2274 7970 6522 3a32 2c22 6b65 7922  ","type":2,"key"
+00000009: 3a22 5138 6538 6378 6e47 4473 654f 476e  :"Q8e8cxnGDseOGn
+0000000a: 3275 524f 3572 7a56 7a6b 6870 664a 7935  2uRO5rzVzkhpfJy5
+0000000b: 466a 3674 306e 5370 3654 5031 7545 376a  Fj6t0nSp6TP1uE7j
+0000000c: 4e55 4933 632d 6b64 527a 3163 665a 554b  NUI3c-kdRz1cfZUK
+0000000d: 4857 4d32 5145 532d 756b 7162 6879 7178  HWM2QES-ukqbhyqx
+0000000e: 4d75 4b48 3274 7278 7935 6946 744f 475f  MuKH2trxy5iFtOG_
+0000000f: 644c 6e76 6f6b 6838 7379 4e71 3046 5141  dLnvokh8syNq0FQA
+00000010: 3754 5973 5371 334f 6f35 2d6e 6863 3766  7TYsSq3Oo5-nhc7f
+00000011: 7470 2d42 316c 506b 3547 5275 7932 4e37  tp-B1lPk5GRuy2N7
+00000012: 4d53 7438 304a 5279 6165 7933 2d6d 7065  MSt80JRyaey3-mpe
+00000013: 7139 4652 376a 3767 5846 386f 6f4d 6e4c  q9FR7j7gXF8ooMnL
+00000014: 5562 4539 374f 3273 714a 6675 5048 3164  UbE97O2sqJfuPH1d
+00000015: 446d 316a 7362 227d                      Dm1jsb"}
+
+[认证成功包]
+00000000: 0000 001a 0010 0001 0000 0008 0000 0001  ................
+00000001: 7b22 636f 6465 223a 307d                 {"code":0}
+
+[心跳包]
+心跳包 31B
+00000000: 0000 001f 0010 0001 0000 0002 0000 0001  ................
+00000001: 5b6f 626a 6563 7420 4f62 6a65 6374 5d    [object Object]
+
+[心跳回应包]
+心跳回应包(Protocol_Version===1 &&Operation ===3)
+ 35B 的包大小,然而 Packet_Length===0x14 解包时注意避坑
+00000000: 0000 0014 0010 0001 0000 0003 0000 0000  ................
+00000001: 0000 0001 5b6f 626a 6563 7420 4f62 6a65  ....[object Obje
+00000002: 6374 5d                                  ct]
+上面是游客的回应包,包含一个总是1的数据,先前版本中可能是人气值
+
+[消息包]
+JSON格式数据中的cmd字段为数据包类型
+    DANMU_MSG   收到弹幕
+</pre>
+        <embed src="extra.js">
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>BiliBili Danmaku ･ﾟ✧</title>
+        <style>
+            body {
+                font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+                /* align-items: flex-end; */
+                display: flex;
+                justify-content: center;
+                background: honeydew;
+            }
+
+            #container {
+                /* margin: 100px; */
+                width: 500px;
+                font-size: small;
+            }
+
+            p {
+                margin: 0px;
+                padding: 2px 2px 2px 20px;
+                background-color: hsl(25,80%,90%);
+            }
+
+            p:nth-child(even) {
+                filter: hue-rotate(60deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <p> - - - - click to open websocket - - - - </p>
+    </div>
+    <script src="https://activity.hdslb.com/blackboard/static/20210425/d0411babbbf77c49ca42a3320eb804ae/0NCT06vruR.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

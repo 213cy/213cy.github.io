@@ -1,0 +1,86 @@
+
+
+body {
+    background-color: #FFFFFF;
+    font-size: 15px;
+}
+
+
+
+.chinese-font {
+    font-family: KaiTi,STKaiti,DFKai-SB,BiauKai,Arial !important;
+    font-size: 1.5em;
+}
+
+
+
+.blue-text {
+    color: #1155CC;
+}
+
+
+
+a:visited {
+    color: #1155CC
+}
+
+
+
+.btn-default {
+    border-radius: 1em;
+}
+
+a:hover {
+    background-color: #e6e6e6; 
+    text-decoration: underline;
+/*     background-color: transparent; */
+}
+
+a {
+    color: #1155CC;
+}
+
+
+
+.c-btn {
+    display: inline-block;
+    border: solid 1px #CCC;
+    border-radius: 1em;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    margin-bottom: 4px;
+    -webkit-transition: width 2s, height 2s;
+    transition: width 2s, height 2s;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+
+
+.circle-link {
+    display: inline-block;
+    border: solid 1px #CCC;
+    border-radius: 1em;
+    padding: 4px;
+    -webkit-transition: width 2s, height 2s;
+    transition: width 2s, height 2s;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+
+
+.arch-live {
+    -webkit-transition: width 2s, height 2s;
+    transition: width 2s, height 2s;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}

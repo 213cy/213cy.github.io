@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!-- https://sparkmorry.github.io/mse-learning/h265/ -->
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Web Workers API</title>
+        <link href="style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div class='btn_container'>
+            <div id="composeCommand" class="btn">compose command</div>
+            <div id="getError" class="btn">make some error</div>
+            <div id="sendData" class="btn">send some date</div>
+        </div>
+        <div class="terminal-header">
+            <input id="input" value=""/>
+            <input type=button id="run" value="Run Command"/>
+            <img id="image-loader" src="./load.gif"/>
+        </div>
+        <pre id="output"></pre>
+<!--         <div class='output_container'></div> -->
+<!--         <script src="worker.js"></script> -->
+        <script type="text/javascript" src="main.js"></script>
+    </body>
+</html>

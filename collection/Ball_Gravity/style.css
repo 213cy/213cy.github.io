@@ -1,0 +1,78 @@
+html, body {
+    margin: 0;
+}
+
+html {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #aaa;
+    height: 100%;
+}
+
+body {
+    overflow: hidden;
+    height: inherit;
+}
+
+h1 {
+    font-size: 2rem;
+    letter-spacing: -1px;
+    position: absolute;
+    margin: 0;
+    top: -4px;
+    right: 5px;
+    color: #0000;
+    text-shadow: 0 0 4px white;
+}
+
+div#monitor {
+    position: absolute;
+    margin: 0;
+    top: 35px;
+    right: 5px;
+    width: 150px;
+}
+
+div>p {
+}
+
+p#myp {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+}
+
+input#cmdInput {
+    position: fixed;
+    bottom: 70px;
+    left: 50px;
+    /* line-height: 30px; */
+    /* padding: 8px 10px; */
+    border: aliceblue;
+    outline: #c67c19;
+    caret-color: #fff;
+    font-size: 1rem;
+    color: white;
+    background: transparent;
+    width: 300px;
+    outline: 0.2rem solid #fff9c4;
+    outline-offset: 0.2rem;
+    border-radius: 7px;
+}
+
+div#cmdOutput {
+    position: fixed;
+    left: 50px;
+    bottom: 120px;
+    border: 0.1rem outset #f0f8ff;
+    width: 500px;
+    height: auto;
+    color: white;
+    white-space: pre-wrap;
+    display: block;
+    opacity: 1;
+}
+
+div.trans {
+    /*     transition: opacity 5s 5s, display 2s 10s; */
+    transition: opacity 5s 5s;
+}

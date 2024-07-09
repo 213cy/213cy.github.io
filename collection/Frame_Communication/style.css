@@ -1,0 +1,38 @@
+html {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+/*     overflow: hidden; */
+}
+
+p {
+    margin: auto;
+}
+
+#iframe_top {
+    width: 40%;
+    display: inline-block;
+    height: 200px;
+    vertical-align: top;
+    overflow: auto;
+    margin: 10px;
+}
+
+iframe {
+    width: 40%;
+    height: 200px;
+    overflow-y: scroll;
+}
+
+embed#text {
+    display: block;
+    width: 80%;
+    height: 200px;
+    border: #e69d1e solid 5px;
+}
+
+
+textarea {
+    width: 90%;
+}

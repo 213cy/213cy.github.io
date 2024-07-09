@@ -1,0 +1,164 @@
+html {
+  /* Primary color */
+  --color-primary: #ffc107;
+  --color-primary-light: #fff350;
+  --color-primary-dark: #c79100;
+
+  /* Secondary color */
+  --color-secondary: #00b8d4;
+  --color-secondary-light: #62ebff;
+  --color-secondary-dark: #0088a3;
+
+  /* Text on colored background */
+  --text-on-primary-light: #000;
+  --text-on-primary-dark: #fff;
+  --text-on-secondary: #000;
+  --text-on-secondary-dark: #fff;
+
+  /* Background color */
+  --color-background-dark: #e1e2e1;
+  --color-background-light: #F5F5F6;
+
+}
+
+html,
+body {
+  /* background-color: var(--color-background-light); */
+  font-family: Roboto, sans-serif;
+  margin: 0;
+}
+
+section {
+  padding: 1em;
+  text-align: center;
+  font-family: Roboto, sans-serif;
+}
+
+button {
+  height: 36px;
+  padding: 0 16px;
+  border: aliceblue;
+  border-radius: 2px;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 36px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  vertical-align: middle;
+  user-select: none;
+  box-sizing: border-box;
+  color: #00B8D4;
+}
+
+header>h1 {
+  background-color: var(--color-primary-dark);
+  color: var(--text-on-primary-dark);
+  margin: 0;
+  font-weight: normal;
+  padding: 1rem;
+}
+
+header .desc {
+  background-color: var(--color-primary);
+  color: var(--text-on-primary);
+  padding: 1rem;
+}
+
+
+
+.desc {
+  color: #999;
+  font-style: italic;
+}
+
+/* Toggle */
+
+.lbl {
+  padding-left: 54px;
+  width: 150px;
+  display: inline-block;
+  position: relative;
+  margin: auto;
+}
+.lbl:before {
+  content: '';
+  top: 0;
+  left: 0;
+  display: inline-block;
+  position: absolute;
+  display: block;
+  height: 20px;
+  width: 44px;
+  background: #898989;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.lbl:after {
+  position: absolute;
+  left: -2px;
+  top: -3px;
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  border-radius: 100px;
+  background: #fff;
+  box-shadow: 0px 3px 3px rgba(0,0,0,0.05);
+  content: '';
+  transition: all 0.3s ease;
+}
+.lbl:active:after {
+  transform: scale(1.15, 0.85);
+}
+.cbx:checked ~ label:before {
+  background: #6fbeb5;
+}
+.cbx:checked ~ label:after {
+  left: 20px;
+  background: #179588;
+}
+.cbx:disabled ~ label:before {
+  background: #d5d5d5;
+  pointer-events: none;
+}
+.cbx:disabled ~ label:after {
+  background: #bcbdbc;
+}
+.hidden {
+  display: none;
+}
+
+
+  /* the following was edited by me */
+p{
+  margin:2px;
+}
+.display {
+  justify-content: center;
+  display: flex;
+  background-color: #0000;
+}
+
+.display div {
+  background-color: #fff0;
+  /* color: #0000; */
+  margin: 1em;
+  position: relative;
+  width: 400px;
+}
+
+canvas{
+    z-index: -1;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border: solid;
+    width: inherit;
+    height: auto;
+}

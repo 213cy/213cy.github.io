@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>烟花特效</title>
+        <meta name="viewport" content="width=device-width,user-scalable=no">
+    </head>
+    <body>
+        <div>
+            https://haiyong.site/moyu <br>
+            https://haiyong.site/demo/fireworks1.html <br>
+            https://blog.csdn.net/qq_44273429/article/details/122486667 <br>
+        </div>
+        <script>
+
+            window.addEventListener("DOMContentLoaded", onLoad, false);
+            window.requestAnimationFrame = window.requestAnimationFrame;
+            window.requestAnimationFrame = function(callback) {
+                window.setTimeout(callback, 1000 / 20);
+            }
+
+            var canvas, ctx, w, h, particles = new Set();
+
+            function onLoad() {
+                canvas = document.createElement('canvas');
+                canvas.width = w = "950";
+                canvas.height = h = "450";
+                if (a = document.body.firstChild) {
+                    document.body.insertBefore(canvas, a);
+                } else {
+                    document.body.append(canvas);
+                }
+
+                ctx = canvas.getContext("2d");
+                // ctx.globalAlpha = 0.2;
+
+                window.requestAnimationFrame(updateWorld);
+            }
+
+            function updateWorld() {
+
+                if (particles.size < 400 * Math.random()) {
+                    createFirework();
+                }
+
+                particles.forEach(a=>a.move());
+
+                ctx.globalCompositeOperation = 'source-over';
+                ctx.fillStyle = "rgba(0,0,0,0.2)";
+                ctx.fillRect(0, 0, w, h);
+
+                ctx.globalCompositeOperation = 'lighter';
+                particles.forEach(a=>a.draw());
+
+                window.requestAnimationFrame(updateWorld);
+            }
+
+            function createFirework() {
+                let px = Math.random() * (w - 200) + 100;
+                let py = Math.random() * (h - 200) + 100;
+                let hsl_str = `${Math.random() * 360} ${Math.random() * 20 + 50}% ${Math.random() * 30 + 50}%`;
+
+                let nFlame = Math.random() * 50 + 100;
+                for (let i = 0; i < nFlame; i++) {
+                    let particle = new Particle(px,py,hsl_str);
+                    particles.add(particle);
+                }
+            }
+
+            function Particle(px, py, hsl_str) {
+                this.r = Math.random() * 4 + 1;
+
+                this.x = px;
+                this.y = py;
+
+                let Radius = 5;
+                let r_ball = Math.pow(Math.random(), 1 / 3);
+                let r_circle = Math.pow(Math.random(), 1 / 2);
+                let phi_circle = 2 * Math.PI * Math.random();
+                let theta_ball = Math.PI / 2 * r_circle * Math.cos(phi_circle) + Math.PI / 2;
+                let phi_ball = 2 * Math.PI * Math.random();
+                let vz = Radius * r_ball * Math.cos(theta_ball);
+                let vx = Radius * r_ball * Math.sin(theta_ball) * Math.cos(phi_ball)
+                let vy = Radius * r_ball * Math.sin(theta_ball) * Math.sin(phi_ball)
+
+                this.vx = vx;
+                this.vy = vy;
+                this.vz = vz;
+
+                this.alpha = Math.random() * .5 + .5;
+                this.hsl_str = hsl_str;
+
+            }
+
+            Particle.prototype = {
+                gravity: 0.06,
+                move: function() {
+                    this.x += this.vx;
+                    this.vy += this.gravity;
+                    this.y += this.vy;
+                    this.alpha = this.alpha - 0.005 + this.vz / 1000;
+                    this.r *= 0.98;
+
+                    if (this.x <= 0 || this.x >= w || this.y >= h || this.y <= 0) {
+                        particles.delete(this);
+                    }
+                    if (this.r <= 1 || this.alpha <= 0) {
+                        particles.delete(this);
+                    }
+                },
+                draw: function(c) {
+                    // ctx.save();
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+                    ctx.closePath();
+
+                    ctx.fillStyle = `hsl( ${this.hsl_str} / ${this.alpha * 100}% )`;
+                    ctx.fill();
+                    // ctx.restore();
+                }
+            }
+        </script>
+    </body>
+</html>
+
+
+
+

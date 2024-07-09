@@ -1,0 +1,19 @@
+html {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+    overflow: hidden;
+}
+
+p {
+    margin: auto;
+}
+
+embed#text {
+    width: 80%;
+    height: 400px;
+    border: thick solid peachpuff;
+}
+
+

@@ -1,0 +1,56 @@
+html, body {
+    margin: 0;
+}
+
+html {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #aaa;
+    height: 100%;
+}
+
+body {
+    overflow: hidden;
+    height: inherit;
+}
+
+h1 {
+    position: absolute;
+    margin: 15px;
+    right: 10px;
+    color: #0000;
+    text-shadow: 0 0 4px white;
+}
+
+div#monitor {
+    position: absolute;
+    margin: 0;
+    top: 35px;
+    right: 5px;
+    width: 150px;
+}
+
+div>p {
+}
+
+p#myp {
+    position: absolute;
+    bottom: 15px;
+    left: 50px;
+}
+
+
+
+div#info {
+    position: absolute;
+    margin: 50px;
+    padding: 10px;
+    top: 20px;
+    border: 0.1rem outset #f0f8ff;
+    width: 500px;
+    /* height: auto; */
+    color: white;
+    white-space: pre-wrap;
+    display: none;
+}
+
+

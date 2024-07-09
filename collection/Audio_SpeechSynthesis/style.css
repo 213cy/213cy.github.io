@@ -1,0 +1,41 @@
+html {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #7e1b1b;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+ul {
+    color: #c32929fc;
+    text-shadow: 0 0 4px white;
+    font-size: xx-large;
+    list-style-type: none;
+}
+
+li.highlight{
+       color: #39ff21fc;
+       list-style-type: disc;
+}
+div {
+    border: 0.5rem solid #f0f8ff;
+    width: 640px;
+    height: 360px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-image: url("back.jpg"); */
+    /* background-attachment: fixed; */
+    background-size: cover;
+    position: relative;
+}
+
+canvas {
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    background-color: #00ffff82;
+    z-index: -1;
+}

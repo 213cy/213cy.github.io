@@ -1,0 +1,101 @@
+html {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    /* color: #aaa; */
+}
+
+body {
+    /*     overflow: hidden;
+    height: inherit; */
+    margin: 50px;
+    margin-top: 40px;
+}
+
+.btn_container {
+    display: flex;
+    gap: 40px;
+}
+
+.btn_container div {
+    width: 20%;
+    padding: 7px;
+    display: inline;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #ccc;
+}
+
+/* ============== */
+.terminal-header {
+    display: flex;
+    gap: 10px;
+    margin: 10px;
+    max-height: 27px;
+}
+
+input {
+    width: 60%;
+    padding: 4px;
+}
+
+input::placeholder {
+    color: red;
+    font-size: 1.2em;
+    font-style: italic;
+}
+
+#run {
+    width: 15%
+}
+
+img#image-loader {
+    object-fit: contain;
+    width: 30px;
+    visibility: hidden;
+}
+
+/* ============== */
+.output_container {
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+    border: solid;
+}
+
+#output {
+    white-space: pre-wrap;
+    word-break: break-all;
+    background-color: #ddd;
+    margin-top: 0px;
+    height: 350px;
+    width: 75%;
+    overflow-y: scroll;
+    /* overflow: auto; */
+    border: solid;
+    position: absolute;
+    /* bottom: -10px; */
+}
+
+#output.closed {
+}
+
+span {
+    color: #f00;
+}
+
+hr {
+    border: solid;
+    border: 1px inset #333;
+    color: #333;
+    overflow: visible;
+    text-align: center;
+    height: 1px;
+    background-color: #aaa;
+    width: 90%;
+}
+
+hr::after {
+    content: '§ § §';
+    position: relative;
+    top: -8px;
+}

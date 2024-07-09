@@ -1,0 +1,28 @@
+html, body {
+    margin: 0;
+}
+
+html {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+    overflow: hidden;
+}
+
+body::before {
+    content: 'css Enabled !!! ';
+    position: absolute;
+    left: 200px;
+}
+
+.template {
+    position: absolute;
+    margin: 15px;
+    padding: 10px;
+    border: 0.1rem outset #f0f8ff;
+    background-color: #aaa;
+    color: #0000;
+    text-shadow: 0 0 4px white;
+    white-space: pre-wrap;
+}

@@ -8,205 +8,124 @@
         <meta name="description" content="Type Chinese online - Arch Chinese">
         <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1.0, maximum-scale=5.0">
         <link rel="shortcut icon" href="favicon.ico">
+        <!-- Core CSS -->
+        <link href="page.css" rel="stylesheet">
         <!-- start top script -->
-        <!-- Bootstrap Core CSS -->
-        <link href="./Type Chinese Online_files/bootstrap.min.css" rel="stylesheet">
-        <!--Arch Chinese-->
-        <link href="./Type Chinese Online_files/archchinese.css" rel="stylesheet">
-        <!-- end top script -->
         <script language="JavaScript" type="text/javascript">
             function faqToggle(index) {
                 document.querySelector('#' + index).style.display = '';
             }
 
             function copyToClipboard() {
+                // copy( document.querySelector('textarea').value )
                 document.querySelector("#chineseBox").select();
                 document.execCommand('copy');
             }
         </script>
     </head>
-    <body style="background-color: #FFFFFF;" link="0000ff" alink="ff0000" vlink="c000c0">
-        <div id="bodywrap">
-            <nav class="navbar navbar-default" role="navigation">
-                <div>
-                    <a id="logo" class="arch-live" href="https://www.archchinese.com/type_chinese.html">
-                        <span id="archchinese_id" style="font-size:200%;font-weight:bold;font-family:&#39;Helvetica Neue&#39;,Helvetica,Arial,sans-serif;vertical-align: middle;">ArchChinese</span>
-                    </a>
-                    <!-- /.container -->
-                </div>
-            </nav>
-            <!-- end header-->
-            <!-- Page Content -->
-            <div class="container-fuild" style="margin-top: -20px;padding: 0 15px;">
-                <div class="row" style="padding-top:10px;">
-                    <div class="col-md-12">
-                        <div style="text-align:left;">
-                            <div class="row">
-                                <div class="col-md-2"></div>
-                                <div class="col-md-8">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <h3 class="panel-title">
-                                                Type Chinese
-				<span class="pull-right" id="statusLabel" style="font-size:14px;"></span>
-                                            </h3>
-                                        </div>
-                                        <div class="panel-body">
-                                            <div class="col-md-8" style="text-align:center;">
-                                                <input type="text" class="form-control c-btn" id="pinyinInput" placeholder="Enter pinyin here, e.g., hao" style="height: 32px; width:100%; font-size:18px;margin-bottom:8px;">
-                                            </div>
-                                            <div class="col-md-4" style="text-align:center;">
-                                                <a class="btn btn-default circle-link blue-text" style="width:160px;" href="https://www.archchinese.com/type_chinese.html#" onclick="event.preventDefault();copyToClipboard();">&nbsp;Copy to Clipboard</a>
-                                            </div>
-                                            <div class="col-md-12 chinese-font" id="candidateBox" style="border-top: 1px solid #CCCCCC; margin-top:4px; min-height:72px;overflow:auto;word-wrap:break-word;"></div>
-                                            <div class="col-md-12">
-                                                <textarea id="chineseBox" class="form-control chinese-font c-btn" rows="7" placeholder=""></textarea>
-                                            </div>
-                                            <div class="col-md-12" style="width:100%;padding-top:4px;">
-                                                <center></center>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <hr>
-                            <!-- ============== -->
-                            You can type Chinese on a tablet, smartphone, or PC without installing a Chinese Input Method Editor(IME)! It is fast and runs on all the modern web browsers. No additional software or browser plug-ins need to be installed.
-
-<br>
-                            <br>
-                            <center>
-                                <div id="a1" style="display:none;text-align:center;">
-                                    <img class="img-responsive" width="911px" height="569px" border="0" src="./Type Chinese Online_files/type_chinese.png">
-                                </div>
-                            </center>
-                            As shown in <a href="javascript:void(0)" onclick="event.preventDefault(); faqToggle('a1');">the screenshot</a>
-                            of this online Chinese input system, it consists of 3 boxes: the Pinyin input box, the Chinese text box, and the candidate character and word box. To type Chinese,
-<br>
-                            <ul>
-                                <li>
-                                    Enter fuzzy Pinyin (Pinyin without tones) into the Pinyin input box. For examples, <a href="https://www.archchinese.com/chinese_english_dictionary.html?find=hao">hao</a>
-                                    and <a href="https://www.archchinese.com/chinese_english_dictionary.html?find=nihao">nihao</a>
-                                    . Use v for ü , e.g. <a href="https://www.archchinese.com/chinese_english_dictionary.html?find=lv">lv</a>
-                                </li>
-                                <li>
-                                    When typing words with two or more characters, you can just type the first letter of each syllable. For example, <b>ggqc</b>
-                                    for <a href="https://www.archchinese.com/chinese_english_dictionary.html?find=%E5%85%AC%E5%85%B1%E6%B1%BD%E8%BD%A6">公共汽车</a>
-                                    , <b>daxs</b>
-                                    for <a href="https://www.archchinese.com/chinese_english_dictionary.html?find=%E5%A4%A7%E5%AD%A6%E7%94%9F">大学生</a>
-                                    , and <b>gxing</b>
-                                    for <a href="https://www.archchinese.com/chinese_english_dictionary.html?find=%E9%AB%98%E5%85%B4">高兴</a>
-                                    .
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                </li>
-                                <li>Press the corresponding number key, or click the Chinese character or word, to select the character or word from the candidate box</li>
-                                <li>
-                                    Press the <b>spacebar</b>
-                                    to select the first character or word in the candidate box
-                                
-                                
-                                
-                                </li>
-                                <li>
-                                    Press <b>Right Arrow</b>
-                                    or <b>Down Arrow</b>
-                                    key to show the next page of candidates
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                </li>
-                                <li>
-                                    Press <b>Left Arrow</b>
-                                    or <b>Up Arrow</b>
-                                    key to show the previous page of candidates
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                </li>
-                                <li>Letters (a to z) and numbers (0 to 9) are used to enter Pinyin and select the candidate character or word. All other 
-ASCII characters are automatically inserted into the Chinese text box</li>
-                                <li>
-                                    Press <b>Ctrl</b>
-                                    to toggle the input cursor to the Chinese text box so you can enter numbers and letters into the Chinese text or 
-edit the Chinese text. For example, selectively deleting some Chinese text, adding white spaces or line breaks. 
-
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                </li>
-                                <li>
-                                    Press the <b>Alt + Shift </b>
-                                    keys to show and select a Chinese punctuation mark .
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                </li>
-                                <li>On tablets or smartphones, tap the Pinyin input box or Chinese text box to switch back and forth</li>
-                                <li>If you press backspace key and there are no more Pinyin letters in the Pinyin input box to delete, the last character in the Chinese text box will be deleted instead.
-
-</li>
-                            </ul>
-                            The candidate character and word entries are from the Arch Chinese <a href="https://www.archchinese.com/chinese_english_dictionary.html">Chinese-English dictionary</a>
-                            . <br>
-
-
-
-                        </div>
-                        <!-- end col-md-12 -->
-                    </div>
-                    <!-- end row-->
-                </div>
-                <br>
-                <!-- end Page Content -->
+    <body>
+        <!-- end header-->
+        <!-- Page Content -->
+        <div class="panel">
+            <div class="panel-heading">
+                <span class="logo">
+                    <a href="https://www.archchinese.com/type_chinese.html">ArchChinese</a>
+                </span>
+                Type Chinese
+				<span id="statusLabel">Loading data...</span>
             </div>
-            <!--- start bottom script -->
-            <script src="./Type Chinese Online_files/phone-word-map.js"></script>
-            <script src="./Type Chinese Online_files/typechinese-fun.js"></script>
-            <script src="./Type Chinese Online_files/typechinese.js"></script>
-            <!--- end bottom script -->
+            <div class="panel-body">
+                <div>
+                    <input type="text" id="pinyinInput" class="trans-border" placeholder="Enter pinyin here, e.g., hao">
+                    <a class="buttonLink" href="#" onclick="event.preventDefault();copyToClipboard();">&nbsp;Copy to Clipboard</a>
+                </div>
+                <div id="candidateBox" class="chinese-font"></div>
+                <textarea id="chineseBox" class="trans-border chinese-font" rows="7" placeholder=""></textarea>
+            </div>
         </div>
-        <!--end body wrap-->
+        <hr>
+        <!-- ====================================== -->
+        <div id="manual">
+            You can type Chinese on a tablet, smartphone, or PC without installing a Chinese Input Method Editor(IME)! It is fast and runs on all the modern web browsers. No additional software or browser plug-ins need to be installed.
+            <br>
+            <br>
+            <center>
+                <div id="a1" style="display:none;text-align:center;">
+                    <img class="img-responsive" width="911px" height="569px" border="0" src="demo.png">
+                </div>
+            </center>
+            As shown in <a href="javascript:void(0)" onclick="event.preventDefault(); faqToggle('a1');">the screenshot</a>
+            of this online Chinese input system, it consists of 3 boxes: the Pinyin input box, the Chinese text box, and the candidate character and word box. To type Chinese:
+                            <br>
+            <ul>
+                <li>
+                    Enter fuzzy Pinyin (Pinyin without tones) into the Pinyin input box. For examples, <a href="https://www.archchinese.com/chinese_english_dictionary.html?find=hao">hao</a>
+                    and <a href="https://www.archchinese.com/chinese_english_dictionary.html?find=nihao">nihao</a>
+                    . Use v for ü , e.g. <a href="https://www.archchinese.com/chinese_english_dictionary.html?find=lv">lv</a>
+                </li>
+                <li>
+                    When typing words with two or more characters, you can just type the first letter of each syllable. For example, <b>ggqc</b>
+                    for <a href="https://www.archchinese.com/chinese_english_dictionary.html?find=%E5%85%AC%E5%85%B1%E6%B1%BD%E8%BD%A6">公共汽车</a>
+                    , <b>daxs</b>
+                    for <a href="https://www.archchinese.com/chinese_english_dictionary.html?find=%E5%A4%A7%E5%AD%A6%E7%94%9F">大学生</a>
+                    , and <b>gxing</b>
+                    for <a href="https://www.archchinese.com/chinese_english_dictionary.html?find=%E9%AB%98%E5%85%B4">高兴</a>
+                </li>
+                <li>Press the corresponding number key, or click the Chinese character or word, to select the character or word from the candidate box</li>
+                <li>
+                    Press the <b>Enter</b>
+                    to select the first character or word in the candidate box<e></e>
+                </li>
+                <li>
+                    Press <b>Right Arrow</b>
+                    or <b>Down Arrow</b>
+                    key to show the next page of candidates<e></e>
+                </li>
+                <li>
+                    Press <b>Left Arrow</b>
+                    or <b>Up Arrow</b>
+                    key to show the previous page of candidates<e></e>
+                </li>
+                <li>Letters (a to z) and numbers (0 to 9) are used to enter Pinyin and select the candidate character or word. 
+                                    All other ASCII characters are automatically inserted into the Chinese text box</li>
+                <li>
+                    Press <b>Ctrl</b>
+                    to toggle the input cursor to the Chinese text box so you can enter numbers and letters into the Chinese text or 
+                                    edit the Chinese text. For example, selectively deleting some Chinese text, adding white spaces or line breaks<e></e>
+                </li>
+                <li>
+                    Press the <b>Alt + Shift </b>
+                    keys to show and select a Chinese punctuation mark<e></e>
+                </li>
+                <li>On tablets or smartphones, tap the Pinyin input box or Chinese text box to switch back and forth .</li>
+                <li>If you press backspace key and there are no more Pinyin letters in the Pinyin input box to delete, 
+                                    the last character in the Chinese text box will be deleted instead</li>
+            </ul>
+            The candidate character and word entries are from the Arch Chinese <a href="https://www.archchinese.com/chinese_english_dictionary.html">Chinese-English dictionary</a>
+            <br>
+        </div>
+        <!-- end Page Content -->
+        <!--- start bottom script -->
+        <script src="phone_word_data.js"></script>
+        <script src="main.js"></script>
+        <!--- end bottom script -->
+        // "ang shou  ting  xiong 昂首挺胸"
+// "a   shou  ting  xiong 昂首挺胸"
+// "a   s     ting  xiong 昂首挺胸"
+// "a   s     t     xiong 昂首挺胸"
+// "a   s     t     x 昂首挺胸"
+// "ang shou  t     xiong 昂首挺胸"
+// "ang s     t     xiong 昂首挺胸"
+
+// // ==========
+
+// "a   b     b   d    按兵不动"
+// "a   b     b   dong 按兵不动"
+// "a   b     bu  dong 按兵不动"
+// "a   bing  bu  dong 按兵不动"
+// "an  b     b   dong 按兵不动"
+// "an  bing  b   dong 按兵不动"
+// "an  bing  bu  dong 按兵不动"
+    <br>
     </body>
 </html>

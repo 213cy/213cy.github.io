@@ -1,0 +1,64 @@
+html, body {
+    margin: 0;
+}
+
+html {
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+/*     font-family: "Yahei Mono","微软雅黑"; */
+/*     font-family: Arial; */
+}
+
+body {
+    overflow: hidden;
+}
+
+body {
+    font-size: 84%;
+}
+
+.header {
+    margin: 10px;
+    padding: 1px;
+    width: 90%;
+    background-color: antiquewhite;
+    font-size: 20px;
+    text-align: center;
+    /* text-shadow: -1px -1px #bbb; */
+}
+
+.dustbin {
+    margin: 4px;
+    background-color: floralwhite;
+    height: 23px;
+    text-align: left;
+}
+
+.dustbin a {
+    margin: 5px;
+}
+
+.table {
+    margin: 10px;
+    width: fit-content;
+    border: thick double #32a1ce;
+    display: flex;
+}
+
+.dragColumn {
+    padding: 10px;
+    border: 2px dashed #ccc;
+    background-color: #eee;
+    cursor: move;
+    width: 60px;
+    /* display: inline-block; */
+}
+
+.dragColumn:hover {
+    border-color: #cad5eb;
+    background-color: #f0f3f9;
+}
+
+.dragremind {
+    padding-top: 2em;
+    clear: both;
+}

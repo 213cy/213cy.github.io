@@ -30,3 +30,19 @@ parseInt(400, 8) == 0o400n
 '\377' == '\u00ff'
 '\400' == String.fromCharCode(Number.parseInt(40, 8)) + '0'
 String.fromCharCode(97).codePointAt(0)
+
+function name(params) {
+    escape("𠮷");
+    '\uD842\uDFB7' == "𠮷";
+
+    const a = "𠮷".codePointAt(0);
+    a > 0xffff;
+    55296..toString(2);
+    56320..toString(16);
+    const b = 55296 + (~~(a - 65536) >> 10 & 1023) & 65535;
+    const c = 56320 + (a - 65536 & 1023) & 65535;
+    "𠮷".charCodeAt(0) == b;
+    "𠮷".charCodeAt(1) == c;
+    String.fromCharCode(b) + String.fromCharCode(c) == "𠮷";
+
+}

@@ -1,36 +1,37 @@
 html, body {
-    margin: 0;
+    /* margin: 0; */
 }
 
 html {
     font-family: 'Helvetica Neue', Helvetica, sans-serif;
-/*     font-family: "Yahei Mono","微软雅黑"; */
+/*     font-family: "Yahei Mono"; */
 /*     font-family: Arial; */
 }
 
 body {
-    overflow: hidden;
-}
-
-body {
+    /* overflow: hidden; */
     font-size: 84%;
 }
 
+/* ============================== */
+
 .header {
-    margin: 10px;
+    margin: 15px;
     padding: 1px;
     width: 90%;
     background-color: antiquewhite;
     font-size: 20px;
     text-align: center;
-    /* text-shadow: -1px -1px #bbb; */
 }
 
 .dustbin {
-    margin: 4px;
+    margin: 5px;
     background-color: floralwhite;
-    height: 23px;
+    min-height: 16px;
     text-align: left;
+    font-size: 14px;
+    overflow-wrap: break-word;
+    /* word-break: normal; */
 }
 
 .dustbin a {
@@ -45,8 +46,8 @@ body {
 }
 
 .dragColumn {
-    padding: 10px;
-    border: 2px dashed #ccc;
+    padding: 2px;
+    border: 1px solid #ccc;
     background-color: #eee;
     cursor: move;
     width: 60px;
@@ -61,4 +62,29 @@ body {
 .dragremind {
     padding-top: 2em;
     clear: both;
+}
+
+/* ================= */
+
+ul{
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+li {
+    border-bottom: 1px solid;
+}
+
+li:nth-child(odd) {
+    background-color: azure;
+    background-color: #ddd;
+}
+
+li:nth-child(1) {
+    text-align: center;
+    font-weight: 600;
+    line-height: 20px;
+    background: aliceblue;
+    background-color: cornsilk;
 }

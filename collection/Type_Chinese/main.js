@@ -74,9 +74,14 @@ class DataSource {
         const commonest = '的一是不了人我在有他这为之大来以个中上们到说国和地也子时道出';
         const aaa = commonest.split('').map(a=>' ' + a);
 
-        const eee = P.replaceAll(/[\w ]*@/g, '').split('|');
-        const fff = eee.filter(a=>a.length > 1).sort();
-        // eee.sort((a,b)=>a[0] > b[0] ? 1 : a[0] < b[0] ? -1 : 0);
+        // const eee = P.replaceAll(/[\w ]*@/g, '').split('|');
+        // const fff = eee.filter(a=>a.length > 1).sort();
+        // fff.sort((a,b)=>a[0] > b[0] ? 1 : a[0] < b[0] ? -1 : 0);
+
+        const bbb = P.replaceAll(/\s/g, '').split('|');
+        const ccc = bbb.filter(it=>!/@.$/.test(it));
+        const ddd = ccc.map(it=>it[it.indexOf('@') + 1] + it).sort()
+        const fff = ddd.map(it=>it.split('@')[1]);
         const res = aaa.concat(fff);
 
         const indexSting = res.reduce((a,b)=>a + b[0], '');
@@ -322,7 +327,7 @@ class InputMethodUI {
         this.candidateWords = [];
         this.candidateWords.hasFore = false;
         this.candidateWords.hasRear = false;
-        this.leadingChar =' ';
+        this.leadingChar = ' ';
 
         this.data = new DataSource(PHONEDICT);
         // delete PHONEDICT;
@@ -390,7 +395,7 @@ class InputMethodUI {
     // =================
     inputPronunciation() {
 
-        if ( 25 < this.eleInput.value.length) {
+        if (25 < this.eleInput.value.length) {
             return;
         }
         if (this.eleInput.value.length == 0) {
@@ -459,7 +464,7 @@ class InputMethodUI {
         }
 
         this.inputPronunciation();
-        
+
         this.eleInput.focus();
     }
 
@@ -504,9 +509,11 @@ Interface.eleInput.addEventListener('keyup', (e)=>{
         Interface.turnPage(1);
         break;
     case "Enter":
+        Interface.updateInput('');
         Interface.acceptWord(0);
         break;
     case Number(e.key).toString():
+        Interface.updateInput('');
         Interface.acceptWord('1234567890'.indexOf(e.key));
         break;
     case e.code[3]?.toLowerCase():

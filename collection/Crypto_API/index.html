@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <META charset="utf-8">
+        <title>Random Draws</title>
+        <link href="style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div>
+            <h3>Random draws</h3>
+            <p>
+                <button id="fileButton">pick file</button>
+                Warning: file content is not the same as the text in `textarea` !!! &nbsp;
+            </p>
+            <textarea id="lotteryInfo"></textarea>
+            <p>
+                <label for="NNum">Number of participants in the draw:</label>
+                <input id="NNum" type="number" value="99" min="10" step="1"/>
+                <button id="drawButton">Draw</button>
+            </p>
+            <textarea id="lotteryResults"></textarea>
+        </div>
+        <div>
+            <p>https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-38d.pdf</p>
+            <p>https://www.nist.gov/itl/publications-0/nist-special-publication-800-series-general-information</p>
+            <p>https://bost.ocks.org/mike/shuffle/compare.html</p>
+            <p>https://www.bilibili.com/video/BV19h4y1S7QG</p>
+            <p>https://www.bilibili.com/video/BV1fo4y1h7pN/</p>
+            <p>https://javascript.info/task/shuffle</p>
+            <p>https://www.zhihu.com/question/556648965</p>
+            <p>线性同余生成器（LCG, Linear Congruential Generator)</p>
+        </div>
+        <script src="Random_Drawing.js"></script>
+        <script src="main.js"></script>
+        <script src="crypto_API_demo.js"></script>
+    </body>
+</html>
+<!-- =================== -->

@@ -1,0 +1,35 @@
+html, body {
+    margin: 0;
+}
+
+html {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+    /* vertical-align: text-top; */
+    text-align: center;
+}
+
+div {
+    margin: 20px;
+    padding: 20px;
+    border: solid;
+    border-color: cornflowerblue;
+}
+
+div#container {
+    display: flex;
+    justify-content: center;
+}
+
+div#fromCanvas {
+    display: flex;
+    align-items: center;
+}
+
+img {
+    border: solid;
+    border-color: burlywood;
+    margin: 10px;
+}

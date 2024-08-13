@@ -15,10 +15,5 @@ body {
     background-color: rgb(155 195 103);
 }
 
-body::before {
-    content: 'css Enabled !!! ';
-    position: absolute;
-    left: 200px;
-}
 
 

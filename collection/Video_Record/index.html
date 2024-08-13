@@ -4,6 +4,7 @@
         <link href="style.css" rel="stylesheet" type="text/css">
     </head>
     <body>
+        <video id="videoElement" autoplay playsinline></video>
         <button>record</button>
         <a></a>
         <code>
@@ -12,10 +13,12 @@
                     <span>转换格式</span>
                     ffmpeg -i video.webm output.mp4;
                 
+                
                 </li>
                 <li>
                     <span>添加音频</span>
                     ffmpeg -i video.webm -i audio.mp3 -c:v copy -af apad -map 0:v -map 1:a -shortest  out.mp4;
+                
                 
                 </li>
             </ul>

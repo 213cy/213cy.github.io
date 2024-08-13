@@ -30,7 +30,7 @@ function onFulfilled(stm) {
 }
 
 function onRejected(reason) {
-    btn.textContent=reason;
+    btn.textContent = reason;
     // btn.textContent=reason.message;
 }
 
@@ -51,3 +51,16 @@ function onRejected(reason) {
 // })();
 
 // navigator.mediaDevices.getUserMedia
+
+const videoElement = document.getElementById('videoElement');
+
+navigator.mediaDevices.getUserMedia({
+    video: true,
+    audio: true
+}).then((stream)=>{
+    videoElement.srcObject = stream;
+}
+).catch((error)=>{
+    console.error('Error accessing webcam:', error);
+}
+);

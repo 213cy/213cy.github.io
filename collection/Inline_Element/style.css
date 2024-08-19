@@ -1,0 +1,44 @@
+html, body {
+    margin: 0;
+}
+
+html {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* https://theme.tenphi.me/ */
+body {
+    /* overflow: hidden; */
+    text-align: center;
+    vertical-align: middle;
+    background-color: whitesmoke;
+    background-color: rgb(155 195 103);
+}
+
+#note {
+    text-align: initial;
+    padding: 0px 50px;
+}
+
+.eleList {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    color: mediumblue;
+    width: 60%;
+    margin: auto;
+    line-height: 25px;
+}
+
+.eleList a {
+    color: brown;
+}
+
+.eleList a:before {
+    content: "<";
+    color: mediumblue;
+}
+
+.eleList a:after {
+    content: ">";
+    color: mediumblue;
+}

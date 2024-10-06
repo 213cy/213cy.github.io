@@ -102,11 +102,7 @@ tilt
 tide
 collide
 
-full
-fill
-file (文件夹,打包)
-portfolio  (便携组合)
-philosophy (打包的智慧)
+
 ==========================
 
 
@@ -141,16 +137,7 @@ bounty
 
 sew so saw
 
-blame
-flame
-flare
-fame
-full
-firm
-affirm
-affinity
-infinity
-affiliate
+
 
 
 interrupt

@@ -1,4 +1,12 @@
-﻿
+﻿assault
+dealt
+fault
+default
+vault
+casualty
+cruelty
+built
+guilt
 
 lobe
 lube
@@ -213,6 +221,7 @@ quadratic
 quarantine
 Squid
 Assault Squad
+Vault
 quake
 quartz
 square
@@ -358,10 +367,6 @@ Marlboro
 maneuver
 ------------------------------------
 
-infrastructure
-infrared
-infrasonic
-
 flexible
 flection
 reflect
@@ -370,6 +375,7 @@ fragile
 fragment
 fraction
 infrared
+infrasonic
 infrastructure
 
 fiction
@@ -395,6 +401,24 @@ famous
 flame
 flare
 blame
+
+blame
+flame
+flare
+fame
+full
+firm
+affirm
+affinity
+infinity
+affiliate
+
+full
+fill
+file (文件夹,打包,提交)
+fire
+portfolio  (便携组合)
+philosophy (打包的智慧)
 
 fatal
 fetal

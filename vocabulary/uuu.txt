@@ -63,6 +63,8 @@ quote
 quotient
 quake
 quadrangle
+qword
+quad word
 queen
 squad
 query

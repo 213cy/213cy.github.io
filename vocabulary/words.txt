@@ -1,4 +1,6 @@
-﻿assault
+﻿console
+consult
+assault
 dealt
 fault
 default
